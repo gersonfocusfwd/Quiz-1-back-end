@@ -1,18 +1,18 @@
-import express from "express";
-import rutasEmpresa from "./rutas/EmpresaRutas.js";
+import express from 'express';
+import rutasEmpresa from './rutas/EmpresaRutas.js';
 
 const app = express();
 
-// 🟢 Configuración esencial
-app.use(express.json()); // Permite recibir JSON en el body de las peticiones
+// 🟢 CONFIGURACIÓN PARA RECIBIR DATOS (El famoso Body)
+app.use(express.json());
 
-// 🟢 Conectar las rutas con un prefijo estético
-app.use("/api", rutasEmpresa);
+// 🟢 CONEXIÓN DE RUTAS
+app.use('/api', rutasEmpresa);
 
 const PUERTO = 3000;
 app.listen(PUERTO, () => {
     console.log("=========================================");
-    console.log(`api ${PUERTO}`);
+    console.log(`🚀 API DE DESARROLLO CORRIENDO EN EL PUERTO ${PUERTO}`);
     console.log(`🔗 Pruebas en Postman: http://localhost:${PUERTO}/api/ver-empresa`);
     console.log("=========================================");
 });

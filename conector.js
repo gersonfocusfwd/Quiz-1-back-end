@@ -1,6 +1,6 @@
-import Empresa from './clases/Empresa.js';
-import Departamento from './clases/Departamento.js';
-import Empleado from './clases/Empleado.js';
+import Empresa from './modelos/EmpresaModelos.js';
+import Departamento from './modelos/DepartamentoModelos.js';
+import Empleado from './modelos/EmpleadoModelos.js';
 
 // Instancia principal
 let miEmpresa = new Empresa("mortadela con cebolla");

@@ -1,19 +1,19 @@
 import Empleado from "../modelos/EmpleadoModelos.js";
 
-const crearEmpleadoPrueba = (req, res) => {
-    // Simulamos que recibimos datos de Postman (req.body)
+const registrarNuevoColaborador = (req, res) => {
+    // Extraemos la información del "Body" (lo que vos llamabas JB)
     const { id, nombre, correo, puesto, salario } = req.body;
 
-    // Instanciamos la clase que usa herencia de Persona
-    const colaborador = new Empleado(id, nombre, correo, puesto, salario);
+    // Usamos nuestra clase con HERENCIA
+    const nuevoEmpleado = new Empleado(id, nombre, correo, puesto, salario);
 
     res.json({
-        mensaje: "Empleado instanciado correctamente con POO",
-        objetoCompleto: colaborador,
-        detalleCientifico: colaborador.obtenerDetalles()
+        mensaje: "¡Datos recibidos en el Body del API!",
+        empleado: nuevoEmpleado,
+        confirmacion: nuevoEmpleado.obtenerDetalles()
     });
 };
 
 export const EmpleadoControlador = {
-    crearEmpleadoPrueba
+    registrarNuevoColaborador
 };
