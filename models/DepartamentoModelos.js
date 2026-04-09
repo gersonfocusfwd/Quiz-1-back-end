@@ -1,4 +1,4 @@
-import Empleado from './Empleado.js';
+import Empleado from './EmpleadoModelos.js';
 
 class Departamento {
     constructor(nombre) {
