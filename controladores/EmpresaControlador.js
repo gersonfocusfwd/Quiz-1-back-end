@@ -2,11 +2,11 @@ import Empresa from "../modelos/EmpresaModelos.js";
 import Departamento from "../modelos/DepartamentoModelos.js";
 import Empleado from "../modelos/EmpleadoModelos.js";
 
-// Instanciamos la empresa principal
+// Instancia de la empresa
 const miEmpresa = new Empresa("Gerson Dev Solutions", "3-101-123456");
 
 const obtenerDetallesEmpresa = (req, res) => {
-    // Usamos los métodos de la clase Empresa
+    // Usamos la clase empresa
     const respuesta = miEmpresa.obtenerEstructuraCompleta();
     
     res.json({
@@ -16,10 +16,11 @@ const obtenerDetallesEmpresa = (req, res) => {
 };
 
 const configurarEmpresaInicial = (req, res) => {
-    // 1. Creamos un departamento
+// se crea un departamento
+
     const deptoTI = new Departamento(1, "Tecnologías de Información");
 
-    // 2. Creamos un empleado (Usando HERENCIA)
+    //se crea usuario con la herencia
     const nuevoEmpleado = new Empleado(
         202, 
         "Gerson", 
@@ -28,7 +29,7 @@ const configurarEmpresaInicial = (req, res) => {
         3000
     );
 
-    // 3. Los unimos
+    // se unen
     deptoTI.agregarEmpleado(nuevoEmpleado);
     miEmpresa.registrarDepartamento(deptoTI);
 
