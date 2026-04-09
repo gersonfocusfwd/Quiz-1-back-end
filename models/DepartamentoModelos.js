@@ -1,17 +1,12 @@
-import Empleado from './EmpleadoModelos.js';
-
 class Departamento {
-    constructor(nombre) {
-        this.nombre = nombre;
+    constructor(id, nombreDepartamento) {
+        this.id = id;
+        this.nombreDepartamento = nombreDepartamento;
         this.listaEmpleados = [];
     }
 
     agregarEmpleado(empleado) {
         this.listaEmpleados.push(empleado);
-    }
-
-    obtenerEmpleados() {
-        return this.listaEmpleados;
     }
 }
 

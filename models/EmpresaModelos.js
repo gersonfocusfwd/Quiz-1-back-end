@@ -1,17 +1,19 @@
 class Empresa {
-    constructor(nombre) {
-        this.nombre = nombre;
-        this.listaDepartamentos = [];
+    constructor(nombreEmpresa, cedulaJuridica) {
+        this.nombreEmpresa = nombreEmpresa;
+        this.cedulaJuridica = cedulaJuridica;
+        this.departamentos = [];
     }
 
-    agregarDepartamento(departamento) {
-        this.listaDepartamentos.push(departamento);
+    registrarDepartamento(departamento) {
+        this.departamentos.push(departamento);
     }
 
-    obtenerInformacionEmpresa() {
+    obtenerEstructuraCompleta() {
         return {
-            nombre: this.nombre,
-            departamentos: this.listaDepartamentos
+            empresa: this.nombreEmpresa,
+            totalDepartamentos: this.departamentos.length,
+            datos: this.departamentos
         };
     }
 }

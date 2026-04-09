@@ -1,11 +1,15 @@
-class Empleado {
-    constructor(nombre, puesto) {
-        this.nombre = nombre;
+import Persona from "./PersonaModelos.js";
+
+class Empleado extends Persona {
+    constructor(id, nombre, correo, puesto, salario) {
+        // 'super' pasa los datos al constructor de Persona
+        super(id, nombre, correo);
         this.puesto = puesto;
+        this.salario = salario;
     }
 
-    obtenerInfoEmpleado() {
-        return `Nombre: ${this.nombre} - Puesto: ${this.puesto}`;
+    obtenerDetalles() {
+        return `Colaborador: ${this.nombre} | Puesto: ${this.puesto}`;
     }
 }
 
