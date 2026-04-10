@@ -8,9 +8,10 @@ app.use(express.json());
 app.use('/api', rutasEmpresa);
 
 const PUERTO = 3000;
+
 app.listen(PUERTO, () => {
-    console.log("=========================================");
+    console.log("aguacate");
     console.log(`API ${PUERTO}`);
     console.log(` Pruebas en Postman: http://localhost:${PUERTO}/api/ver-empresa`);
-    console.log("=========================================");
+    console.log("aguacate");
 });
