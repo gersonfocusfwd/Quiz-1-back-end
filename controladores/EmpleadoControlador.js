@@ -1,19 +1,22 @@
 import Empleado from "../modelos/EmpleadoModelos.js";
+import { guardar_nuevo_empleado } from "../conector.js";
 
-const crearEmpleadoPrueba = (req, res) => {
-    // Simulamos que recibimos datos de Postman (req.body)
-    const { id, nombre, correo, puesto, salario } = req.body;
+// 🟢 Exportamos la función directamente
+export const registrarNuevoColaborador = async (req, res) => {
+    try {
+        const { id, nombre, correo, puesto, salario } = req.body;
 
-    // Instanciamos la clase que usa herencia de Persona
-    const colaborador = new Empleado(id, nombre, correo, puesto, salario);
+        // Uso de la herencia de tus clases POO
+        const nuevoEmpleado = new Empleado(id, nombre, correo, puesto, salario);
 
-    res.json({
-        mensaje: "Empleado instanciado correctamente con POO",
-        objetoCompleto: colaborador,
-        detalleCientifico: colaborador.obtenerDetalles()
-    });
-};
+        // Guardamos en el archivo JSON
+        const resultado = await guardar_nuevo_empleado(nuevoEmpleado);
 
-export const EmpleadoControlador = {
-    crearEmpleadoPrueba
+        res.json({
+            mensaje: "✅ Datos recibidos y guardados en el JSON",
+            empleado_creado: resultado
+        });
+    } catch (error) {
+        res.status(500).json({ mensaje: "Error en el servidor", detalle: error.message });
+    }
 };
