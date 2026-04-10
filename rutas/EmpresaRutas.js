@@ -1,14 +1,10 @@
 import express from 'express';
-import { EmpresaControlador } from '../controladores/EmpresaControlador.js';
-import { EmpleadoControlador } from '../controladores/EmpleadoControlador.js';
+// 🟢 Importamos la función específica y NO OLVIDÉS el .js al final
+import { registrarNuevoColaborador } from '../controladores/EmpleadoControlador.js';
 
 const router = express.Router();
 
-// empresa rutas
-router.get('/configurar', EmpresaControlador.configurarEmpresaInicial);
-router.get('/ver-empresa', EmpresaControlador.obtenerDetallesEmpresa);
-
-// ruta de los empleados
-router.post('/registrar-empleado', EmpleadoControlador.registrarNuevoColaborador);
+// Ruta para que probés en Postman
+router.post('/registrar-empleado', registrarNuevoColaborador);
 
 export default router;
