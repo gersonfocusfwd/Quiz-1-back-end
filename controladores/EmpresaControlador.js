@@ -2,11 +2,11 @@ import Empresa from "../modelos/EmpresaModelos.js";
 import Departamento from "../modelos/DepartamentoModelos.js";
 import Empleado from "../modelos/EmpleadoModelos.js";
 
-// Instancia de la empresa
+
 const miEmpresa = new Empresa("Gerson Dev Solutions", "3-101-123456");
 
 const obtenerDetallesEmpresa = (req, res) => {
-    // Usamos la clase empresa
+    // clase de empresa usada
     const respuesta = miEmpresa.obtenerEstructuraCompleta();
     
     res.json({
