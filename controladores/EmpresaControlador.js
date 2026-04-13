@@ -6,7 +6,7 @@ import Empleado from "../modelos/EmpleadoModelos.js";
 const miEmpresa = new Empresa("Gerson Dev Solutions", "3-101-123456");
 
 const obtenerDetallesEmpresa = (req, res) => {
-    // clase de empresa usada
+    
     const respuesta = miEmpresa.obtenerEstructuraCompleta();
     
     res.json({

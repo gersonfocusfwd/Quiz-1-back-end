@@ -3,11 +3,9 @@ import { registrarNuevoColaborador, listarEmpleados } from '../controladores/Emp
 
 const router = express.Router();
 
-// Ruta para registrar un nuevo empleado
 // POST: /empleados/registrar
 router.post('/registrar', registrarNuevoColaborador);
 
-// Ruta para ver todos los empleados
 // GET: /empleados/listar
 router.get('/listar', listarEmpleados);
 

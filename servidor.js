@@ -1,8 +1,8 @@
 import express from 'express';
 import cors from 'cors';
 import rutasEmpresa from './rutas/EmpresaRutas.js';
-// 🟢 Importamos las de empleados
 import rutasEmpleado from './rutas/EmpleadoRutas.js'; 
+import rutasDepartamento from './rutas/DepartamentoRutas.js';
 
 const app = express();
 const PUERTO = 3000;
@@ -10,12 +10,9 @@ const PUERTO = 3000;
 app.use(cors());
 app.use(express.json());
 
-// --- SECCIÓN DE RUTAS ---
-// Conectamos las funciones de la empresa
 app.use('/empresa', rutasEmpresa);
-
-// 🟢 Conectamos las funciones de los empleados
 app.use('/empleados', rutasEmpleado); 
+app.use('/departamentos', rutasDepartamento);
 
 
 app.listen(PUERTO, () => {
