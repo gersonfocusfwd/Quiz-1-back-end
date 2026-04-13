@@ -1,17 +1,19 @@
 import express from 'express';
+import cors from 'cors';
 import rutasEmpresa from './rutas/EmpresaRutas.js';
 
 const app = express();
-
-app.use(express.json());
-
-app.use('/api', rutasEmpresa);
-
 const PUERTO = 3000;
 
+app.use(cors());
+app.use(express.json());
+
+//  conectamos rutas
+app.use('/api', rutasEmpresa);
+
 app.listen(PUERTO, () => {
-    console.log("aguacate");
-    console.log(`API ${PUERTO}`);
-    console.log(` Pruebas en Postman: http://localhost:${PUERTO}/api/ver-empresa`);
-    console.log("aguacate");
+
+    console.log(` aquitamo: http://localhost:${PUERTO}`);
+    console.log("pensando y viendo las estrellas pregunte... si en algun lugar esto se estaria repitiendo");
+
 });
