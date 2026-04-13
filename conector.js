@@ -1,4 +1,4 @@
-const URL_DATA = "http://localhost:3000/empleados"; 
+const URL_DATA = "http://localhost:3001/empleados"; 
 
 export const guardar_nuevo_empleado = async (empleado) => {
     try {
