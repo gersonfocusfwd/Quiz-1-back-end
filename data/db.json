@@ -1,7 +1,3 @@
 {
-  "id": "67",
-  "nombre": "GersonFocus",
-  "correo": "gerson@focusfwd.com",
-  "puesto": "Senior Backend",
-  "salario": 9000
+  "empleados": []
 }
